@@ -36,7 +36,6 @@ class StepsController < ApplicationController
     redirect_to @guide
   end
 
-
   private
 
   def set_guide

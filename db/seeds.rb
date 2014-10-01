@@ -1,20 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 guides = Guide.create([
   { name: 'How to jump from an airplane without a parachute',
-    description: 'In hands training for jumping from a 747 over the Pacific Ocean. No requirement for knowing how to swim.'},
+    description: 'In hands training for jumping from a 747 over the Pacific Ocean. No requirement for knowing how to swim.' },
   { name: 'How to play the Bishop Game without blood',
-    description: 'Remember how Bishop (the android) used to kill the ours aboard the Nostromo? This guide will teach you how to beat Bishop to his favorite game with little loss of blood.'},
+    description: 'Remember how Bishop (the android) used to kill the ours aboard the Nostromo? This guide will teach you how to beat Bishop to his favorite game with little loss of blood.' },
   { name: 'Make your own real-life Donkey Kong video-game',
-    description: 'Now you can revisit the games of your childhood. Play Donkey Kong trying to cross the I5. These are the 99 easy steps to reconnect with your inner child and have seconds of fun!!'}
-  ])
+    description: 'Now you can revisit the games of your childhood. Play Donkey Kong trying to cross the I5. These are the 99 easy steps to reconnect with your inner child and have seconds of fun!!' }])
 
 ['Ask politely the flight attendant for multiple drinks',
  'Get drunk, but not so much as you loose consciousness',
@@ -24,7 +14,7 @@ guides = Guide.create([
  'Jump, hands in ',
  'Enjoy the view',
  'No money back, sorry'
-].each { |str| Step.create({ name: str, guide: guides[0] }) }
+].each { |str| Step.create(name: str, guide: guides[0]) }
 
 ['Go to the kitchen and ask mommy for a turkey butcher\'s knife',
  'If no knives available, use a fork',
@@ -35,5 +25,4 @@ guides = Guide.create([
  'Stop when you cannot see the table anymore because of the mess you made',
  'Gather all bits and pieces in a ziplock bag for later on (surgery if lucky)',
  'Call 911 with your good hand.'
-].each { |str| Step.create({ name: str, guide: guides[1] }) }
-
+].each { |str| Step.create(name: str, guide: guides[1]) }
