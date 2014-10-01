@@ -4,6 +4,9 @@
   <li>
     <span><%= g.name %></span>
     <span><%= g.description %></span>
+    <span><%= link_to "Show", g %> </span>
+    <span><%= link_to "Edit", edit_guide_path(g) %> </span>
+    <span><%= link_to "Delete", g, method:'delete' %> </span>
   </li>
   <% end %>
 </ul>
