@@ -3,3 +3,5 @@
 <div>
   <%= @guide.description %>
 </div>
+
+<%= link_to "Remove", @guide, method: :delete, data: { confirm: 'Are you sure?' } %>

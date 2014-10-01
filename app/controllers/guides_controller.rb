@@ -34,6 +34,11 @@ class GuidesController < ApplicationController
     end
   end
 
+  def destroy
+    @guide.destroy
+    redirect_to guides_path
+  end
+
   private
 
   def set_guide
