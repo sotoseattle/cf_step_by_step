@@ -2,7 +2,7 @@ require './test/test_helper'
 
 feature 'Create a new guide' do
   scenario 'happy path' do
-    visit guidess_path
+    visit guides_path
     click_on 'Create New Guide'
 
     fill_in 'Name', with: 'How to Install a Toilet'
@@ -22,7 +22,7 @@ feature 'Create a new guide' do
     click_on 'Submit'
 
     Guide.count.must_equal initial_guides_count
-    page.text.must_include 'errors prohibited this guide from being saved'
+    page.text.must_include 'prohibited this guide from being saved'
     page.text.must_include 'Name is too short'
   end
 end
