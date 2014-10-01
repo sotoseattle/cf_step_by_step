@@ -1,10 +1,11 @@
 class GuidesController < ApplicationController
+  before_action :set_guide, only: [:show, :edit, :update, :destroy]
+
   def index
     @guides = Guide.all
   end
 
   def show
-    @guide = Guide.find(params[:id])
   end
 
   def new
@@ -21,7 +22,23 @@ class GuidesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @guide.update(guide_params)
+      flash.notice = 'guide successfully updated'
+      redirect_to @guide
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def set_guide
+    @guide = Guide.find(params[:id])
+  end
 
   def guide_params
     params.require(:guide).permit(:name, :description)

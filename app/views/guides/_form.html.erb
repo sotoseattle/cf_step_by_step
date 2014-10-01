@@ -1,0 +1,28 @@
+<%= form_for(@guide) do |f| %>
+  <div class='row'>
+    <% if @guide.errors.any? %>
+      <div id='error_explanation'>
+        <h2><%= pluralize(@guide.errors.count, 'error') %> prohibited this guide from being saved:</h2>
+        <ul>
+        <% @guide.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <br>
+  <div>
+    <%= f.submit 'Submit', class:'button' %>
+  </div>
+<% end %>
