@@ -1,5 +1,8 @@
 <%= @step.name %>
 <br>
-<%= link_to "Back", @guide %>
-|
-<%= link_to "Remove", [@guide, @step], method: 'delete' %>
+
+<div class='footer'>
+  <%= link_to "Back", @guide %>
+  |
+  <%= link_to "Remove", [@guide, @step], method: 'delete' %>
+</div>

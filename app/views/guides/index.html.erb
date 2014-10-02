@@ -1,14 +1,27 @@
 <h1>Guides</h1>
-<ul>
-  <% @guides.each do |g| %>
-  <li>
-    <span><%= g.name %></span>
-    <span><%= g.description %></span>
-    <span><%= link_to "Show", g %> </span>
-    <span><%= link_to "Edit", edit_guide_path(g) %> </span>
-    <span><%= link_to "Delete", g, method:'delete' %> </span>
-  </li>
-  <% end %>
-</ul>
 
+<table>
+  <thead></thead>
+  <tbody>
+    <% @guides.each do |g| %>
+    <tr class='title'>
+      <td>
+        <%= g.name %>
+        <span class='mini_nav'>
+          <%= link_to "Show", g %>
+          <%= link_to "Edit", edit_guide_path(g) %>
+          <%= link_to "Delete", g, method:'delete' %>
+        </span>
+      </td>
+    </tr>
+    <tr class='descript'>
+      <td><%= g.description %></td>
+    </tr>
+    <tr/>
+    <% end %>
+  </tbody>
+</table>
+
+<div class='footer'>
 <%= link_to "Create New Guide", new_guide_path %>
+</div>
