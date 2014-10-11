@@ -20,6 +20,8 @@ group :development do
   gem 'poltergeist'
   gem 'pry-rails'
   gem 'pry-rescue'
+  gem 'pry-remote'
+  gem 'pry-nav'
   gem 'rubocop'
   gem 'spring'
   gem 'sqlite3'

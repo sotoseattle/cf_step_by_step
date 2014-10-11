@@ -1,0 +1,28 @@
+<h2><%= @guide.name %></h2>
+
+<div>
+  <%= @guide.description %>
+</div>
+<hr/>
+
+<table>
+  <thead></thead>
+  <tbody>
+    <% @guide.steps.each do |s| %>
+      <tr class='title' >
+        <td class=''>
+          <%= link_to s.name, guide_step_path(@guide, s) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<div class='footer'>
+<%= link_to "Create New Step", new_guide_step_path(@guide) %>
+  <hr/>
+  <%= link_to "Remove", @guide, method: :delete, data: { confirm: 'Are you sure?' } %>
+  |
+  <%= link_to "Guides", guides_path %>
+</div>
